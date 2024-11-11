@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GNITS Innovate Countdown</title>
+<link rel = "stylesheet" href="gnit.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  .countdown span {
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+  <h1>Countdown to GNITS Innovate Event</h1>
+  <div class="countdown">
+    <span id="days">00</span> days
+    <span id="hours">00</span> hours
+    <span id="minutes">00</span> minutes
+    <span id="seconds">00</span> seconds
+  </div>
+
+  <script>
+    // Set the date and time for the event (August 14, 2023, Monday 09:00 AM UTC)
+    const eventDate = new Date("August 14, 2025 00:00:00 UTC").getTime();
+
+    // Update the countdown every second
+    const countdownInterval = setInterval(function() {
+      const now = new Date().getTime();
+      const timeRemaining = eventDate - now;
+
+      if (timeRemaining <= 0) {
+        clearInterval(countdownInterval);
+        document.querySelector('.countdown').innerHTML = "Event has started!";
+      } else {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

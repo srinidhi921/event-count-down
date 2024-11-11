@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raksha Bandhan Countdown</title>
+<style>
+  body {
+    /*<font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;*/
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('raksh.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .countdown {
+    font-size: 2rem;
+    margin-top: 100px;
+    color: #ede1e1;
+  }
+</style>
+</head>
+<body>
+<h1>Countdown to Raksha Bandhan</h1>
+<div class="countdown" id="countdown"></div>
+
+<script>
+// Set the date for Raksha Bandhan (date and time may vary)
+const targetDate = new Date("August 30, 2023 12:00:00").getTime();
+
+// Update the countdown every second
+const interval = setInterval(() => {
+  const currentDate = new Date().getTime();
+  const timeLeft = targetDate - currentDate;
+
+  if (timeLeft < 0) {
+    clearInterval(interval);
+    document.getElementById("countdown").innerHTML = "Happy Raksha Bandhan!";
+  } else {
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = `
+      ${days}days ${hours}hours ${minutes}minutes ${seconds}seconds
+    `;
+  }
+}, 1000);
+</script>
+</body>
+</html>

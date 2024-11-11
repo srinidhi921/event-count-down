@@ -1,0 +1,111 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web.css">
+  <title>Independence Day Event</title>
+</head>
+<body>
+  <header>
+    <h1>Independence Day Event</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>Independence Day Event</h2>
+    <p>Celebrate Independence Day with us on [Date]. Join us for a day of patriotic festivities, music, and fireworks. Don't miss the chance to come together and celebrate our freedom.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Your Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web.css">
+  <title>Independence Day Event</title>
+  <style>
+    /* Additional CSS for the countdown timer */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('flags.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      
+    }
+    .countdown {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 0;
+      padding: 300px 0; 
+    }
+    h2 {
+      font-size: 48px;
+      text-align: center;
+      /*margin-top: 50px;*/
+      /*color: white;*/
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- ... (header content) ... -->
+  </header>
+
+  <section class="content">
+    <h2>INDEPENDENCE DAY</h2>
+    <!--<p><a href="index.html">Back to Home</a></p>
+
+    <p>Celebrate Independence Day with us on 15-8-2023. Join us for a day of patriotic festivities, music, and fireworks. Don't miss the chance to come together and celebrate our freedom.</p>-->
+
+    <!-- Countdown Timer -->
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <footer>
+    <!-- ... (footer content) ... -->
+  </footer>
+
+  <script>
+    // JavaScript for Countdown Timer
+    const countdownElement = document.getElementById('countdown');
+    const independenceDay = new Date('2023-08-15'); // Change the date to the actual Independence Day date
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeRemaining = independenceDay - now;
+
+      if (timeRemaining > 0) {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}DAYS ${hours}HOURS ${minutes}MINUTES ${seconds}SECONDS`;
+      } else {
+        countdownElement.innerHTML = 'Event has started!';
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
+

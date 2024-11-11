@@ -1,0 +1,133 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="web.css">
+<title>International Youth Day Countdown</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('inte.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  .countdown {
+    font-size: 2rem;
+    margin-top: 200px;
+    color: #0a0101;
+  }
+</style>
+</head>
+<body>
+<h1>Countdown to International Youth Day</h1>
+<div class="countdown" id="countdown"></div>
+
+<script>
+// Set the date for International Youth Day (August 12)
+const targetDate = new Date("August 12, 2023 00:00:00").getTime();
+
+// Update the countdown every second
+const interval = setInterval(() => {
+  const currentDate = new Date().getTime();
+  const timeLeft = targetDate - currentDate;
+
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = `
+    ${days}d ${hours}h ${minutes}m ${seconds}s
+  `;
+
+  // If the countdown is over, display a message
+  if (timeLeft < 0) {
+    clearInterval(interval);
+    document.getElementById("countdown").innerHTML = "International Youth Day has arrived!";
+  }
+}, 1000);
+</script>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="web.css">
+<title>International Youth Day Countdown</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('inte.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  .countdown {
+    font-size: 3rem;
+    margin-top: 300px;
+    color: #0a0101;
+  }
+  .completed-message {
+    font-size: 3rem; /* Adjust this value to your desired font size */
+    margin-top: 100px;
+    color: #0a0101;
+  }
+</style>
+</head>
+<body>
+<h1>Countdown to International Youth Day</h1>
+<div class="countdown" id="countdown"></div>
+
+<script>
+// Set the date for International Youth Day (August 12)
+const targetDate = new Date("August 12, 2023 00:00:00").getTime();
+
+// Update the countdown every second
+const interval = setInterval(() => {
+  const currentDate = new Date().getTime();
+  const timeLeft = targetDate - currentDate;
+
+  if (timeLeft < 0) {
+    clearInterval(interval);
+   //document.getElementById("countdown").innerHTML = "International Youth Day has arrived!";
+  } else {
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = `
+      ${days}d ${hours}h ${minutes}m ${seconds}s
+    `;
+  }
+}, 1000);
+</script>
+
+<script>
+// Calculate how many days ago the event completed
+const eventCompletedDate = new Date("August 12, 2023 00:00:00").getTime();
+const currentDate = new Date().getTime();
+const daysSinceEvent = Math.floor((currentDate - eventCompletedDate) / (1000 * 60 * 60 * 24));
+
+if (daysSinceEvent > 0) {
+  const eventCompletedMessage = `International Youth Day has been over for ${daysSinceEvent} DAYS.`;
+  document.body.insertAdjacentHTML("beforeend", `<p class="completed-message">${eventCompletedMessage}</p>`);
+}
+</script>
+</body>
+</html>

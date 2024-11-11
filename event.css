@@ -1,0 +1,58 @@
+/* styles.css */
+/*body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }*/
+  
+  /* web.css */
+  /* Add specific styles for the web.css file here */
+  /* web.css */
+#event-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #event-list li {
+    margin-bottom: 10px;
+  }
+  
